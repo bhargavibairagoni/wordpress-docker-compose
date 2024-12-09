@@ -1,6 +1,11 @@
 #!/bin/bash
 # Update all packages
 yum update -y 
+
+sudo yum install -y yum-utils shadow-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+sudo yum -y install terraform
+
 yum install -y docker git MySQL curl
 systemctl start docker
 systemctl enable docker
